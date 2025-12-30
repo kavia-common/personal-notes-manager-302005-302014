@@ -1,82 +1,37 @@
-# Lightweight React Template for KAVIA
+# Personal Notes (Frontend)
 
-This project provides a minimal React template with a clean, modern UI and minimal dependencies.
-
-## Features
-
-- **Lightweight**: No heavy UI frameworks - uses only vanilla CSS and React
-- **Modern UI**: Clean, responsive design with KAVIA brand styling
-- **Fast**: Minimal dependencies for quick loading times
-- **Simple**: Easy to understand and modify
+A lightweight React UI scaffold for a personal notes app, styled with the **Ocean Professional** theme (primary `#2563EB`, accent `#F59E0B`).
 
 ## Getting Started
 
-In the project directory, you can run:
+From `notes_frontend/`:
 
-### `npm start`
-
-Runs the app in development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-### `npm test`
-
-Launches the test runner in interactive watch mode.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-## Customization
-
-### Colors
-
-The main brand colors are defined as CSS variables in `src/App.css`:
-
-```css
-:root {
-  --kavia-orange: #E87A41;
-  --kavia-dark: #1A1A1A;
-  --text-color: #ffffff;
-  --text-secondary: rgba(255, 255, 255, 0.7);
-  --border-color: rgba(255, 255, 255, 0.1);
-}
+```bash
+npm install
+npm start
 ```
 
-### Components
+Open http://localhost:3000
 
-This template uses pure HTML/CSS components instead of a UI framework. You can find component styles in `src/App.css`. 
+## Current Scaffold Features
 
-Common components include:
-- Buttons (`.btn`, `.btn-large`)
-- Container (`.container`)
-- Navigation (`.navbar`)
-- Typography (`.title`, `.subtitle`, `.description`)
+- **Routing (react-router-dom)**
+  - `/` Home (Notes list + editor)
+  - `/about` About page
+  - `*` NotFound (404)
+- **Global UI Shell**
+  - Sticky top navigation with app name: **Personal Notes**
+  - Modern minimalist styling: subtle shadows, rounded corners, soft gradient background
+- **Notes UI**
+  - Two-panel responsive layout (stacks on smaller screens)
+  - `NotesList` with placeholder list item template + empty state
+  - `NoteEditor` with accessible title + content inputs
+- **State scaffolding**
+  - `NotesContext` provides in-memory notes and actions:
+    - `createNote`, `updateNote`, `deleteNote`, `selectNote`
+  - No backend integration and no persistence yet
 
-## Learn More
+## Environment Variables
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This scaffold does not require any backend. If you later add integrations, read variables safely via `process.env.REACT_APP_*`.
+No `REACT_APP_*` variables are required to run the app currently.
